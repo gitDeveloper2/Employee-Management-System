@@ -1,0 +1,5 @@
+package com.gitDveloper3.ems.Repository;
+
+public interface EmployeeRepository {
+
+}

@@ -1,0 +1,8 @@
+package com.gitDveloper3.ems.RestController;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Controller {
+
+}

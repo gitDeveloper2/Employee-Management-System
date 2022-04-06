@@ -1,0 +1,39 @@
+package com.gitDveloper3.ems.RestController;
+
+
+@RestController
+@RequestMapping("/api/employees")
+public class Controller {
+	@Autowired
+	EmployeeService service;
+	@GetMapping
+	public List<Employee> getEmployees(){
+		List<Employee> employeeList=service.getAll();
+		return employeeList;
+	}
+	@GetMapping("/{id}")
+	public Optional<Employee> getEmployee(@PathVariable("id") Long id){
+		Optional<Employee> employeeList=service.get(id);
+		return employeeList;
+	}
+	@PostMapping()
+	public ResponseEntity<?>postEmployee(@RequestBody Employee emp) {
+	return service.post(emp);
+
+	}
+	@DeleteMapping("/{id}")
+	public ResponseEntity<?> deleteEmployee(@PathVariable Long id){
+		return service.delete(id);
+	}
+	@PutMapping()
+	public ResponseEntity<?>editEmployee(@RequestBody Employee emp) {
+	return service.edit(emp);
+
+	}
+	
+	
+	
+	
+	
+	
+}

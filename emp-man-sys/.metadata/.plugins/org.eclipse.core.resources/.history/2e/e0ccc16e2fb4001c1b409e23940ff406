@@ -1,0 +1,36 @@
+package com.gitDveloper3.ems.Services;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import com.gitDveloper3.ems.Employee;
+import com.gitDveloper3.ems.Repository.EmployeeRepository;
+
+@Service
+public class EmployeeService {
+@Autowired
+EmployeeRepository repo;
+	public List<Employee>getAll() {
+		return repo.findAll();
+	}
+	public Optional<Employee> get(Long id) {
+		return repo.findById(id);
+	}
+	public ResponseEntity<?> post(Employee emp) {
+		Employee result=repo.save(emp);
+		return new ResponseEntity<>(result,HttpStatus.OK);
+	}
+	public ResponseEntity<?> delete(Long id){
+		repo.deleteById(id);
+		return new ResponseEntity<>(HttpStatus.OK);
+	}
+	public ResponseEntity<?> edit(Employee emp) {
+		Employee result=repo.save(emp);
+		return new ResponseEntity<>(result,HttpStatus.OK);
+	}
+}

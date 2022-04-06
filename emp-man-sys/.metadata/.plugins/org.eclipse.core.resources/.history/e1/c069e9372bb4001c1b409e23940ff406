@@ -1,0 +1,17 @@
+package com.gitDveloper3.ems.Services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.gitDveloper3.ems.Employee;
+import com.gitDveloper3.ems.Repository.EmployeeRepository;
+
+@Service
+public class EmployeeService {
+@Autowired
+EmployeeRepository repo;
+	public List<Employee>getAll() {
+		return repo.findAll();
+		}

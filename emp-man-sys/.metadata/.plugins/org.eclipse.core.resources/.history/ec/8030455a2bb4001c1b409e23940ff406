@@ -1,0 +1,19 @@
+package com.gitDveloper3.ems.RestController;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.gitDveloper3.ems.Employee;
+
+@RestController
+@RequestMapping("/api/employees")
+public class Controller {
+	@GetMapping
+	public List<Employee> getEmployees(){
+		List<Employee> employeeList;
+		return employeeList;
+	}
+}

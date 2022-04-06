@@ -1,0 +1,5 @@
+package com.gitDveloper3.ems.RestController;
+@RestController
+public class RestController {
+
+}

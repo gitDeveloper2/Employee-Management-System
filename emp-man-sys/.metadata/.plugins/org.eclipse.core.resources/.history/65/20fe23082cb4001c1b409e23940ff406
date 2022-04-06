@@ -1,0 +1,29 @@
+package com.gitDveloper3.ems.RestController;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.gitDveloper3.ems.Employee;
+import com.gitDveloper3.ems.Services.EmployeeService;
+
+@RestController
+@RequestMapping("/api/employees")
+public class Controller {
+	@Autowired
+	EmployeeService service;
+	@GetMapping
+	public List<Employee> getEmployees(){
+		List<Employee> employeeList=service.getAll();
+		return employeeList;
+	}
+	@GetMapping("/{id}")
+	public Employee getEmployee(@PathVariable("id") Long id){
+		List<Employee> employeeList;
+		return employeeList;
+	}
+}

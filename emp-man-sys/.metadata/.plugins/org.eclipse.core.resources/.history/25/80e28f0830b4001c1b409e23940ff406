@@ -1,0 +1,16 @@
+package com.gitDveloper3.ems.Models;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+
+import org.springframework.data.annotation.Id;
+
+@Entity
+public class Employee {
+	@Id
+	@GeneratedValue
+public Long id;
+public String name;
+public int employee_number;
+
+}
