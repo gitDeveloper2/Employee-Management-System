@@ -35,16 +35,19 @@ public class Controller {
 		Optional<Employee> employeeList=service.get(id);
 		return employeeList;
 	}
-	@PostMapping()
+	@CrossOrigin(origins="*")
+	@PostMapping("/employees")
 	public ResponseEntity<?>postEmployee(@RequestBody Employee emp) {
 	return service.post(emp);
 
 	}
-	@DeleteMapping("/{id}")
+	@CrossOrigin(origins="*")
+	@DeleteMapping("/employees/{id}")
 	public ResponseEntity<?> deleteEmployee(@PathVariable Long id){
 		return service.delete(id);
 	}
-	@PutMapping()
+	@CrossOrigin(origins="*")
+	@PutMapping("/employees")
 	public ResponseEntity<?>editEmployee(@RequestBody Employee emp) {
 	return service.edit(emp);
 

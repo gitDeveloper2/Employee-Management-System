@@ -2,6 +2,7 @@ package com.gitDveloper3.ems.Services;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,6 +23,7 @@ EmployeeRepository repo;
 		return repo.findById(id);
 	}
 	public ResponseEntity<?> post(Employee emp) {
+		emp.setEmployeeCode(UUID.randomUUID().toString());
 		Employee result=repo.save(emp);
 		return new ResponseEntity<>(result,HttpStatus.OK);
 	}
